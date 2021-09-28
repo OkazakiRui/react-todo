@@ -23,7 +23,7 @@ const App: VFC = () => {
 
   return (
     <div>
-      <TaskInput />
+      <TaskInput tasks={tasks} setTasks={setTasks} />
       <TaskList tasks={tasks} />
     </div>
   );
