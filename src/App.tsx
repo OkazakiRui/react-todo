@@ -1,5 +1,6 @@
 import { VFC, useState } from "react";
 import TaskList from "./components/TaskList";
+import TaskInput from "./components/TaskInput";
 import { Task } from "./types";
 import "./App.css";
 
@@ -22,6 +23,7 @@ const App: VFC = () => {
 
   return (
     <div>
+      <TaskInput />
       <TaskList tasks={tasks} />
     </div>
   );
