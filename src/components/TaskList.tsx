@@ -4,9 +4,19 @@ import { Task } from "../types";
 
 type Props = {
   tasks: Task[];
+  setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
 };
 
-const TaskList: VFC<Props> = ({ tasks }) => {
+const TaskList: VFC<Props> = ({ tasks, setTasks }) => {
+  const handleDone = (task: Task) => {
+    setTasks((prev) =>
+      prev.map((t) => (t.id === task.id ? { ...task, done: !task.done } : t))
+    );
+  };
+  const handleDelete = (task: Task) => {
+    setTasks((prev) => prev.filter((t) => t.id !== task.id));
+  };
+
   return (
     <div className="inner">
       {tasks.length <= 0 ? (
@@ -14,7 +24,12 @@ const TaskList: VFC<Props> = ({ tasks }) => {
       ) : (
         <ul className="task-list">
           {tasks.map((task) => (
-            <TaskItem key={task.id} task={task} />
+            <TaskItem
+              key={task.id}
+              task={task}
+              handleDone={handleDone}
+              handleDelete={handleDelete}
+            />
           ))}
         </ul>
       )}

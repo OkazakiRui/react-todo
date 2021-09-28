@@ -18,13 +18,12 @@ const initialState: Task[] = [
 ];
 
 const App: VFC = () => {
-  // eslint-disable-next-line
   const [tasks, setTasks] = useState(initialState);
 
   return (
     <div>
       <TaskInput tasks={tasks} setTasks={setTasks} />
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} setTasks={setTasks} />
     </div>
   );
 };
