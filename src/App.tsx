@@ -1,18 +1,18 @@
-import { VFC, useState } from "react";
-import TaskList from "./components/TaskList";
-import TaskInput from "./components/TaskInput";
-import { Task } from "./types";
-import "./App.css";
+import { VFC, useState } from 'react';
+import TaskList from './components/organisms/TaskList';
+import TaskInput from './components/molecules/TaskInput';
+import { Task } from './types';
+import './App.css';
 
 const initialState: Task[] = [
   {
     id: 2,
-    title: "次のTodo",
+    title: '次のTodo',
     done: false,
   },
   {
     id: 1,
-    title: "最初のTodo",
+    title: '最初のTodo',
     done: true,
   },
 ];

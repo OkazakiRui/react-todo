@@ -1,5 +1,5 @@
-import { VFC, useState } from "react";
-import { Task } from "../types";
+import { VFC, useState } from 'react';
+import { Task } from '../../types';
 
 type Props = {
   tasks: Task[];
@@ -7,7 +7,7 @@ type Props = {
 };
 
 const TaskInput: VFC<Props> = ({ tasks, setTasks }) => {
-  const [inputTitle, setInputTitle] = useState("");
+  const [inputTitle, setInputTitle] = useState('');
   const [count, setCount] = useState(tasks.length + 1);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,7 +24,7 @@ const TaskInput: VFC<Props> = ({ tasks, setTasks }) => {
     if (inputTitle.length !== 0) {
       setCount(count + 1);
       setTasks([...tasks, newTask]);
-      setInputTitle("");
+      setInputTitle('');
     }
   };
 
@@ -37,7 +37,7 @@ const TaskInput: VFC<Props> = ({ tasks, setTasks }) => {
           value={inputTitle}
           onChange={handleInputChange}
         />
-        <button onClick={handleSubmit} className="btn is-primary">
+        <button type="button" onClick={handleSubmit} className="btn is-primary">
           追加
         </button>
       </div>

@@ -1,6 +1,6 @@
-import { VFC } from "react";
-import TaskItem from "./TaskItem";
-import { Task } from "../types";
+import { VFC } from 'react';
+import TaskItem from '../molecules/TaskItem';
+import { Task } from '../../types';
 
 type Props = {
   tasks: Task[];
@@ -10,7 +10,7 @@ type Props = {
 const TaskList: VFC<Props> = ({ tasks, setTasks }) => {
   const handleDone = (task: Task) => {
     setTasks((prev) =>
-      prev.map((t) => (t.id === task.id ? { ...task, done: !task.done } : t))
+      prev.map((t) => (t.id === task.id ? { ...task, done: !task.done } : t)),
     );
   };
   const handleDelete = (task: Task) => {
@@ -20,7 +20,7 @@ const TaskList: VFC<Props> = ({ tasks, setTasks }) => {
   return (
     <div className="inner">
       {tasks.length <= 0 ? (
-        "登録されたTODOがありません"
+        '登録されたTODOがありません'
       ) : (
         <ul className="task-list">
           {tasks.map((task) => (
