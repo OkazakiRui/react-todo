@@ -1,6 +1,6 @@
 import { VFC } from 'react';
 import TaskItem from '../molecules/TaskItem';
-import { Task } from '../../types';
+import { Task } from '../../data/tasks';
 
 type Props = {
   tasks: Task[];

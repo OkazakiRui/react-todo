@@ -1,6 +1,6 @@
 import { VFC, useState } from 'react';
 import TaskInput from '../../components/organisms/TaskInput';
-import { Task } from '../../types';
+import { Task } from '../../data/tasks';
 
 type Props = {
   tasks: Task[];

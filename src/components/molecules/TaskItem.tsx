@@ -1,5 +1,5 @@
 import { VFC } from 'react';
-import { Task } from '../../types';
+import { Task } from '../../data/tasks';
 
 type Props = {
   task: Task;
