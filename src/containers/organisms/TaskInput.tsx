@@ -1,4 +1,5 @@
 import { VFC, useState } from 'react';
+import TaskInput from '../../components/organisms/TaskInput';
 import { Task } from '../../types';
 
 type Props = {
@@ -6,7 +7,7 @@ type Props = {
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
 };
 
-const TaskInput: VFC<Props> = ({ tasks, setTasks }) => {
+const EnhancedTaskInput: VFC<Props> = ({ tasks, setTasks }) => {
   const [inputTitle, setInputTitle] = useState('');
   const [count, setCount] = useState(tasks.length + 1);
 
@@ -29,20 +30,12 @@ const TaskInput: VFC<Props> = ({ tasks, setTasks }) => {
   };
 
   return (
-    <div className="input-form">
-      <div className="inner">
-        <input
-          type="text"
-          className="input"
-          value={inputTitle}
-          onChange={handleInputChange}
-        />
-        <button type="button" onClick={handleSubmit} className="btn is-primary">
-          追加
-        </button>
-      </div>
-    </div>
+    <TaskInput
+      inputTitle={inputTitle}
+      handleInputChange={handleInputChange}
+      handleSubmit={handleSubmit}
+    />
   );
 };
 
-export default TaskInput;
+export default EnhancedTaskInput;

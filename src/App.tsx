@@ -1,6 +1,6 @@
 import { VFC, useState } from 'react';
 import TaskList from './components/organisms/TaskList';
-import TaskInput from './components/molecules/TaskInput';
+import TaskInput from './containers/organisms/TaskInput';
 import { Task } from './types';
 import './App.css';
 
